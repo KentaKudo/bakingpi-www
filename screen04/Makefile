@@ -62,3 +62,6 @@ clean :
 	-rm -f $(TARGET)
 	-rm -f $(LIST)
 	-rm -f $(MAP)
+
+run: $(BUILD)
+	qemu-system-arm -m 128 -no-reboot -M raspi2 -serial stdio -kernel $(BUILD)output.elf
